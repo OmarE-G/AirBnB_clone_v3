@@ -7,6 +7,8 @@ import pep8 as pycodestyle
 import time
 import unittest
 from unittest import mock
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning, module="pep8")
 BaseModel = models.base_model.BaseModel
 module_doc = models.base_model.__doc__
 

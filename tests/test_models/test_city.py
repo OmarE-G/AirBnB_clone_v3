@@ -10,6 +10,8 @@ from models import city
 from models.base_model import BaseModel
 import pep8
 import unittest
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning, module="pep8")
 City = city.City
 
 
@@ -92,7 +94,8 @@ class TestCity(unittest.TestCase):
         self.assertEqual(type(new_d), dict)
         self.assertFalse("_sa_instance_state" in new_d)
         for attr in c.__dict__:
-            if attr is not "_sa_instance_state":
+            if attr != "_sa_instance_state":
+
                 self.assertTrue(attr in new_d)
         self.assertTrue("__class__" in new_d)
 

@@ -18,6 +18,9 @@ import json
 import os
 import pep8
 import unittest
+import warnings
+
+warnings.filterwarnings("ignore", category=FutureWarning, module="pep8")
 FileStorage = file_storage.FileStorage
 classes = {"Amenity": Amenity, "BaseModel": BaseModel, "City": City,
            "Place": Place, "Review": Review, "State": State, "User": User}

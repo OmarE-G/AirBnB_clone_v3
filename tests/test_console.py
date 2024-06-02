@@ -2,11 +2,12 @@
 """
 Contains the class TestConsoleDocs
 """
-
 import console
 import inspect
 import pep8
 import unittest
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning, module="pep8")
 HBNBCommand = console.HBNBCommand
 
 
