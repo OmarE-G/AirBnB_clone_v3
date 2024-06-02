@@ -96,9 +96,9 @@ class TestFileStorage(unittest.TestCase):
         self.assertIs(models.storage.get("State", "1"), None)
         new_state = State(name="California")
         new_state.save()
-        self.assertIs(models.storage.get("State", "1"), new_state)
+        self.assertIs(models.storage.get(State, "1"), new_state)
         new_state.delete()
-        self.assertIs(models.storage.get("State", "1"), None)
+        self.assertIs(models.storage.get(State, "1"), None)
 
     @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
     def test_count(self):
